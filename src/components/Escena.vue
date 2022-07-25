@@ -1,19 +1,22 @@
 <template>
-  <div
-    v-for="(value, i) in llista"
-    :key="i"
-    :class="{ focus: i === seleccionat }"
-  >
-    <h4>{{ value.text }}</h4>
+  <div v-if="condition">
+    <div>
+      <div
+        v-for="(value, i) in llista"
+        :key="i"
+        :class="{ focus: i === seleccionat }"
+      >
+        <h4>{{ value.text }}</h4>
+      </div>
+    </div>
   </div>
-
 </template>
 
 
 <script>
 export default {
   name: "Escena",
-  props: ["llista", "seleccionat"],
+  props: ["llista", "seleccionat", "condition"],
 };
 </script>
 
