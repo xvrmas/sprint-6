@@ -1,3 +1,13 @@
 <template>
-    El nostre heroi estava surant per l'espai sideral quan a la llunyania va albirar una nau espacial
+  <div v-for="(value, i) in llista" :key="i">
+    <h4>{{ value.text }}</h4>
+  </div>
 </template>
+
+
+<script>
+export default {
+  name: "Escena",
+  props: ["llista"],
+};
+</script>
