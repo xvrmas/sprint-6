@@ -7,8 +7,12 @@
         :class="{ focus: i === seleccionat }"
       >
         <h4>{{ value.text }}</h4>
+        <!-- <img :src="value.img.src" alt=""> -->
+
       </div>
+
     </div>
+
   </div>
 </template>
 
