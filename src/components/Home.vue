@@ -1,13 +1,17 @@
 <template>
- <Escena
-    :llista="posts"
-  ></Escena>
+  <Botons
+    @accio1="selectedItem1"
+    @accio2="selectedItem2"
+    :condition="condition"
+  ></Botons>
+  <Escena :llista="posts" :seleccionat="currentSentence"></Escena>
 </template>
 
 <script>
 import Escena from "@/components/Escena.vue";
+import Botons from "@/components/Botons.vue";
 export default {
-  components: { Escena },
+  components: { Escena, Botons },
 
   data() {
     return {
@@ -26,9 +30,18 @@ export default {
           text: "Mentrestant, altres herois no van tenir tanta sort en la seva elecció ...",
         },
       ],
+      currentSentence: 0,
     };
   },
- };
+  methods: {
+    selectedItem1() {
+      this.currentSentence--;
+    },
+    selectedItem2() {
+      this.currentSentence++;
+    },
+  },
+};
 </script>
 <style>
 </style>
