@@ -11,3 +11,18 @@ export default {
   props: ["llista"],
 };
 </script>
+
+<style>
+body {
+  display: grid;
+  align-content: center;
+  text-align: center;
+}
+
+h4 {
+  border: solid;
+  background-color: rgb(255, 255, 255);
+  border-radius: 40px;
+  padding: 10px;
+}
+</style>
