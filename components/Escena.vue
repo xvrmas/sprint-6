@@ -1,6 +1,9 @@
 <template>
   <div v-if="condition">
     <div>
+      <div :style="fondo" v-on="funcio1()">
+      <img :src="this.backgroundImage" alt="heroi">
+      </div>
       <div
         v-for="(value, i) in llista"
         :key="i"
@@ -17,8 +20,19 @@
 export default {
   name: "Escena",
   props: ["llista", "seleccionat", "condition"],
-  data() {},
-  methods: {},
+  data() {
+    return {
+      fondo: {
+        backgroundImage: `url(@/assets/1.jpg)`,
+        height: "auto",
+      },
+    };
+  },
+  methods: {
+    funcio1 (){
+       this.fondo.backgroundImage= `url(@/assets/(${this.seleccionat + 1}).jpg)`
+    }
+  }
 };
 </script>
 
@@ -43,4 +57,6 @@ button {
 .focus > h4 {
   background-color: rgb(244, 190, 184);
 }
+
+
 </style>
