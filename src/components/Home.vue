@@ -49,9 +49,15 @@ export default {
     },
     selectedItem1() {
       this.currentSentence--;
+      if (this.currentSentence < 0) {
+        this.currentSentence = 0;
+      }
     },
     selectedItem2() {
       this.currentSentence++;
+      if (this.currentSentence >= this.posts.length) {
+        this.currentSentence = 0; 
+      }
     },
   },
 };
