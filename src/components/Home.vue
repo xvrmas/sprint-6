@@ -37,7 +37,7 @@ export default {
         },
         {
           text: "Mentrestant, altres herois no van tenir tanta sort en la seva elecció ...",
-        },
+        }, 
       ],
       currentSentence: 0,
       condition: false,

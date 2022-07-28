@@ -8,6 +8,7 @@
       >
         <h4>{{ value.text }}</h4>
       </div>
+      <div :style="fondo"></div>
     </div>
   </div>
 </template>
@@ -17,7 +18,18 @@
 export default {
   name: "Escena",
   props: ["llista", "seleccionat", "condition"],
- };
+  data() {
+    return {
+      fondo: {
+        backgroundImage: "",
+        height: "200px",
+      },
+      funcio1() {
+        this.fondo.backgroundImage = `url(@/assets/${seleccionat}.jpg)`;
+      },
+    };
+  },
+};
 </script>
 
 <style>
@@ -41,4 +53,5 @@ button {
 .focus > h4 {
   background-color: rgb(244, 190, 184);
 }
+
 </style>
