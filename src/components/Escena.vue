@@ -17,9 +17,7 @@
 export default {
   name: "Escena",
   props: ["llista", "seleccionat", "condition"],
-  data() {},
-  methods: {},
-};
+ };
 </script>
 
 <style>
