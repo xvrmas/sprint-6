@@ -24,10 +24,12 @@ export default {
         backgroundImage: "",
         height: "200px",
       },
-      funcio1() {
-        this.fondo.backgroundImage = `url(@/assets/${seleccionat}.jpg)`;
-      },
     };
+  },
+  methods: {
+    mostarImatge() {
+      this.fondo.backgroundImage = `url('@/assets/${seleccionat}.jpg')`;
+    },
   },
 };
 </script>
@@ -53,5 +55,4 @@ button {
 .focus > h4 {
   background-color: rgb(244, 190, 184);
 }
-
 </style>

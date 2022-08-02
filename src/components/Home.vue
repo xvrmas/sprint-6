@@ -37,7 +37,7 @@ export default {
         },
         {
           text: "Mentrestant, altres herois no van tenir tanta sort en la seva elecció ...",
-        }, 
+        },
       ],
       currentSentence: 0,
       condition: false,
@@ -56,7 +56,7 @@ export default {
     selectedItem2() {
       this.currentSentence++;
       if (this.currentSentence >= this.posts.length) {
-        this.currentSentence = 0; 
+        this.currentSentence = 0;
       }
     },
   },
