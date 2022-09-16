@@ -1,6 +1,9 @@
 <template>
   <div v-if="condition">
-    <div>
+    <div
+      id="ImatgeFons"
+      :style="{ backgroundImage: `url(${llista[seleccionat].img})` }"
+    >
       <div
         v-for="(value, i) in llista"
         :key="i"
@@ -8,7 +11,6 @@
       >
         <h4>{{ value.text }}</h4>
       </div>
-      <div :style="fondo"></div>
     </div>
   </div>
 </template>
@@ -18,19 +20,7 @@
 export default {
   name: "Escena",
   props: ["llista", "seleccionat", "condition"],
-  data() {
-    return {
-      fondo: {
-        backgroundImage: "",
-        height: "200px",
-      },
-    };
-  },
-  methods: {
-    mostarImatge() {
-      this.fondo.backgroundImage = `url('@/assets/${seleccionat}.jpg')`;
-    },
-  },
+  data() {},
 };
 </script>
 
@@ -40,10 +30,18 @@ body {
   align-content: center;
   text-align: center;
 }
-
+#ImatgeFons {
+  background-position: center center;
+  background-attachment: fixed;
+  background-size:cover ;
+  height: 80vh;
+  /* width: auto; */
+  background-repeat: no-repeat;
+}
 h4 {
   border: solid;
-  background-color: rgb(255, 255, 255);
+  background-color: white;
+  opacity: 0.7;
   border-radius: 40px;
   padding: 10px;
 }
@@ -54,5 +52,6 @@ button {
 }
 .focus > h4 {
   background-color: rgb(244, 190, 184);
+  opacity: 1;
 }
 </style>

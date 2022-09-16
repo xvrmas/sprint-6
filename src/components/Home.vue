@@ -1,19 +1,22 @@
 <template>
-  <Botons
-    @accio1="selectedItem1"
-    @accio2="selectedItem2"
-    :condition="condition"
-  ></Botons>
-
-  <Escena
-    :llista="posts"
-    :seleccionat="currentSentence"
-    :condition="condition"
-  ></Escena>
-  <div class="careta" v-if="!condition">
-    <h2>Benviguts a la web de formació</h2>
-    <br />
-    <button class="boto-inici" @click="mostrar">{{ "Iniciar" }}</button>
+  <div id="contenidor">
+    <Botons
+      @accio1="selectedItem1"
+      @accio2="selectedItem2"
+      :condition="condition"
+    ></Botons>
+    <Escena
+      :llista="posts"
+      :seleccionat="currentSentence"
+      :condition="condition"
+    >
+    </Escena>
+    
+    <div class="careta" v-if="!condition">
+      <h2>Benviguts a la web de formació</h2>
+      <br />
+      <button class="boto-inici" @click="mostrar">{{ "Iniciar" }}</button>
+    </div>
   </div>
 </template>
 
@@ -28,15 +31,19 @@ export default {
       posts: [
         {
           text: `El nostre heroi estava surant per l'espai sideral quan a la llunyania va albirar una nau espacial`,
+          img: require("../assets/1.jpg"),
         },
         {
           text: "Sentia curiositat per l'interior de la nau i es va posar a inspeccionar-la. Va arribar a una sala amb dues portes.",
+          img: require("../assets/2.jpg"),
         },
         {
           text: "L'heroi va decidir travessar la porta que el portava a casa",
+          img: require("../assets/3.jpg"),
         },
         {
           text: "Mentrestant, altres herois no van tenir tanta sort en la seva elecció ...",
+          img: require("../assets/4.jpg"),
         },
       ],
       currentSentence: 0,
