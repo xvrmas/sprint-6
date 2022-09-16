@@ -2,12 +2,12 @@
   <div v-if="condition">
     <div
       id="ImatgeFons"
-      :style="{ backgroundImage: `url(${llista[seleccionat].img})` }"
+      :style="{ backgroundImage: `url(${posts[currentSentence].img})` }"
     >
       <div
-        v-for="(value, i) in llista"
+        v-for="(value, i) in posts"
         :key="i"
-        :class="{ focus: i === seleccionat }"
+        :class="{ focus: i === currentSentence }"
       >
         <h4>{{ value.text }}</h4>
       </div>
@@ -19,7 +19,7 @@
 <script>
 export default {
   name: "Escena",
-  props: ["llista", "seleccionat", "condition"],
+  props: ["posts", "currentSentence", "condition"],
   data() {},
 };
 </script>
@@ -35,7 +35,6 @@ body {
   background-attachment: fixed;
   background-size:cover ;
   height: 80vh;
-  /* width: auto; */
   background-repeat: no-repeat;
 }
 h4 {

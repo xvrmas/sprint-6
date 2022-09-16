@@ -6,8 +6,8 @@
       :condition="condition"
     ></Botons>
     <Escena
-      :llista="posts"
-      :seleccionat="currentSentence"
+      :posts="posts"
+      :currentSentence="currentSentence"
       :condition="condition"
     >
     </Escena>
